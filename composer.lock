@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9b7c081d801c7299723a330279060a26",
+    "content-hash": "3a193ea17febf7e62d2b39ae6ec7f39e",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1368,6 +1368,39 @@
                 "psr-3"
             ],
             "time": "2017-06-19T01:22:40+00:00"
+        },
+        {
+            "name": "ninsuo/symfony-collection",
+            "version": "2.1.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ninsuo/symfony-collection.git",
+                "reference": "d0ceb3d79d8f65be6ba4a482ccc658863df1b3fc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ninsuo/symfony-collection/zipball/d0ceb3d79d8f65be6ba4a482ccc658863df1b3fc",
+                "reference": "d0ceb3d79d8f65be6ba4a482ccc658863df1b3fc",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "ScriptHandler.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alain Tiemblo",
+                    "email": "ninsuo@gmail.com"
+                }
+            ],
+            "description": "A jQuery plugin that manages adding, deleting and moving elements from a Symfony collection",
+            "time": "2017-07-06T20:41:19+00:00"
         },
         {
             "name": "ocramius/proxy-manager",

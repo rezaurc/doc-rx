@@ -37,6 +37,8 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    globals:
+        rx_ver: '1.0.0-alpha'
 
 # Doctrine Configuration
 doctrine:
@@ -67,3 +69,17 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+# fos user configuration
+#@todo need to change from email address
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    from_email:
+        address: 'user@example.com'
+        sender_name: 'User Name'
+
+easy_admin:
+    entities:
+        - AppBundle\Entity\User
