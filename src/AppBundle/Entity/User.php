@@ -21,6 +21,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="`user`")
  */
 class User extends BaseUser
@@ -33,30 +34,70 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @var string
-     * @ORM\Column(name="pub_id", type="string", length=64)
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_created", type="datetime")
      */
-    public $pubId;
+    private $dateCreated;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="update_at", type="datetime")
+     */
+    private $updatedAt;
 
     public function __construct()
     {
         parent::__construct();
-        // your own logic
     }
 
     /**
-     * @return string
+     * @ORM\PrePersist
      */
-    public function getPubId()
+    public function prePersist()
     {
-        return $this->pubId;
+        $this->setDateCreated(new \DateTime());
+        $this->setUpdatedAt(new \DateTime());
+        $this->setRoles(['ROLE_USER']);
+    }
+    /**
+     * @ORM\PreUpdate()
+     */
+    public function preUpdate()
+    {
+        $this->updatedAt = new \DateTime();
     }
 
     /**
-     * @param string $pubId
+     * @return \DateTime
      */
-    public function setPubId($pubId)
+    public function getDateCreated()
     {
-        $this->pubId = $pubId;
+        return $this->dateCreated;
+    }
+
+    /**
+     * @param \DateTime $dateCreated
+     */
+    public function setDateCreated($dateCreated)
+    {
+        $this->dateCreated = $dateCreated;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param \DateTime $updatedAt
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
     }
 }

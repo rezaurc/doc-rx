@@ -10,7 +10,7 @@ parameters:
 
 framework:
     #esi: ~
-    #translator: { fallbacks: ['%locale%'] }
+    translator: ~
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -80,6 +80,6 @@ fos_user:
         address: 'user@example.com'
         sender_name: 'User Name'
 
-easy_admin:
-    entities:
-        - AppBundle\Entity\User
+#easy_admin:
+#    entities:
+#        - AppBundle\Entity\User

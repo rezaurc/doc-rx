@@ -2,10 +2,10 @@ app:
     resource: '@AppBundle/Controller/'
     type: annotation
 
-easy_admin_bundle:
-    resource: '@EasyAdminBundle/Controller/AdminController.php'
-    prefix: /admin
-    type: annotation
+#easy_admin_bundle:
+#    resource: '@EasyAdminBundle/Controller/AdminController.php'
+#    prefix: /
+#    type: annotation
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
